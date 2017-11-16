@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  background: #f0f0f0;
+  font-family: "Roboto", sans-serif; }
+
+.wrapper {
+  max-width: 1140px;
+  width: 87.69231%;
+  margin: 0 auto; }
+
+#add {
+  display: flex;
+  width: 400px;
+  height: 75px;
+  align-items: stretch;
+  margin: 50px auto;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.7); }
+  #add #add-input {
+    width: 325px;
+    outline: none;
+    padding: 0 20px;
+    border: 0;
+    background: #3982e6;
+    color: white;
+    font-size: 1.5rem; }
+  #add #add-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75px;
+    background: #e69a2e;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out; }
+    #add #add-btn:hover {
+      background: #f89d1c; }
+
+.lists {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 100%; }
+  .lists .list {
+    width: 480px;
+    padding: 15px;
+    background: #f0f0f0;
+    color: #404040;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.35);
+    cursor: pointer; }
+    .lists .list.active {
+      background: #b3d2ff;
+      box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.55);
+      cursor: default; }
+    .lists .list .title {
+      margin-bottom: 15px;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 300; }
+    .lists .list .item {
+      display: flex;
+      position: relative;
+      margin-bottom: 15px;
+      padding: 10px;
+      background: white;
+      box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.35);
+      cursor: pointer;
+      transition: box-shadow 0.2s ease-in-out; }
+      .lists .list .item:hover {
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.35); }
+      .lists .list .item * {
+        cursor: pointer; }
+      .lists .list .item.active {
+        max-height: 47px; }
+        .lists .list .item.active .item-input, .lists .list .item.active .save {
+          display: block; }
+        .lists .list .item.active .item-title, .lists .list .item.active .edit, .lists .list .item.active .checkbox-group::after {
+          display: none; }
+      .lists .list .item.completed .item-title {
+        color: #616161;
+        text-decoration: line-through; }
+      .lists .list .item.completed .fa-square-o {
+        display: none; }
+      .lists .list .item.completed .fa-check-square-o {
+        display: block !important; }
+      .lists .list .item .checkbox-group {
+        display: flex; }
+        .lists .list .item .checkbox-group::after {
+          content: "";
+          width: 80%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0; }
+        .lists .list .item .checkbox-group .checkbox-icon {
+          margin-right: 10px;
+          font-size: 1.375rem; }
+          .lists .list .item .checkbox-group .checkbox-icon .fa-check-square-o {
+            display: none;
+            margin-top: 1px; }
+          .lists .list .item .checkbox-group .checkbox-icon .fa-square-o {
+            position: relative;
+            bottom: 1px; }
+        .lists .list .item .checkbox-group .item-title {
+          font-size: 1.1875rem; }
+        .lists .list .item .checkbox-group .item-hide-checkbox {
+          display: none; }
+      .lists .list .item .item-input, .lists .list .item .save {
+        display: none; }
+      .lists .list .item .item-input {
+        flex: 1;
+        width: auto;
+        outline: none;
+        border: none;
+        background: none;
+        color: #404040;
+        font-size: 1.1875rem;
+        font-family: "Roboto", sans-serif;
+        cursor: text; }
+      .lists .list .item .item-actions {
+        display: flex;
+        margin: 0 0 0 auto;
+        font-size: 1.375rem; }
+        .lists .list .item .item-actions div {
+          margin: 0 5px;
+          color: #3982e6; }
+          .lists .list .item .item-actions div:hover {
+            color: #1a68d2; }
+        .lists .list .item .item-actions .delete {
+          color: #d93a2b; }
+          .lists .list .item .item-actions .delete:hover {
+            color: #b12c20; }
+        .lists .list .item .item-actions .save {
+          color: #36d951; }
+          .lists .list .item .item-actions .save:hover {
+            color: #23b93c; }

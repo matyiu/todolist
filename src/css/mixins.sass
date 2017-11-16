@@ -1,0 +1,6 @@
+@mixin font($pixel)
+    font-size: ($pixel / 16) + rem
+
+@mixin width($pixel, $width)
+    $constant-width: $width or $max-width
+    width: percentage($pixel / $constant-width)
