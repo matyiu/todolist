@@ -6,8 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack --progress --watch --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js",
-    "deploy": "gh-pages -d dist"
+    "build": "webpack --config webpack.prod.js"
   },
   "author": "valleespinozajefferson@gmail.com",
   "license": "ISC",

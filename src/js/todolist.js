@@ -1,5 +1,6 @@
 import closestParentClass from "./closestParentClass";
-import mediator from "./mediator"
+import mediator from "./mediator";
+import escapeHtmlTags from "./escapeHtmlTags";
 
 var todoList = (function(extend, state) {
     let tasks;
@@ -37,7 +38,7 @@ var todoList = (function(extend, state) {
 
     // Add task to DOM
     function _addToDom(section, task) {
-        const title = task.title;
+        const title = escapeHtmlTags(task.title);
         const completed = _getCompletedState(task);
         const template =
             `<div class="${completed}" data-index="">

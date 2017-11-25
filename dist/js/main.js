@@ -116,7 +116,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__css_main_sass__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__css_main_sass___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__css_main_sass__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__todolist__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__storage__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__storage__ = __webpack_require__(6);
 
 
 
@@ -135,6 +135,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__closestParentClass__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mediator__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__escapeHtmlTags__ = __webpack_require__(5);
+
 
 
 
@@ -174,7 +176,7 @@ var todoList = (function(extend, state) {
 
     // Add task to DOM
     function _addToDom(section, task) {
-        const title = task.title;
+        const title = Object(__WEBPACK_IMPORTED_MODULE_2__escapeHtmlTags__["a" /* default */])(task.title);
         const completed = _getCompletedState(task);
         const template =
             `<div class="${completed}" data-index="">
@@ -369,6 +371,33 @@ function closestParentClass(elm, elmClass) {
 
 /***/ }),
 /* 5 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = escapeHtmlTags;
+function escapeHtmlTags(text) {
+    const specialEntities = {
+        "<": "&lt;",
+        ">": "&gt;",
+        "&": "&amp;",
+        '"': "&quot;",
+        "'": "&apos;"
+    };
+    const textToSanitize = text.split("");
+    const sanitizedText = textToSanitize.map((char) => {
+        if (char in specialEntities) {
+            return specialEntities[char];
+        }
+
+        return char;
+    }).join("");
+
+    return sanitizedText;
+}
+
+
+/***/ }),
+/* 6 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
